@@ -1,7 +1,25 @@
-#main {
+#card {
+    background-color: #67928954;
     width: 500px;
     height: 450px;
-    border: 1px solid #4C5454;
-    margin: 0 auto;
+    padding: 40px;
+    margin: 50px auto;
     border-radius: 10px;
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+}
+
+
+#iniciar {
+    background-color: #1EA896;
+    margin: 0 auto;
+    border: none;
+}
+
+#iniciar:hover {
+    background-color: #1D7874;
+
 }
