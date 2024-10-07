@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand logo-custom" href="#"><img src="../static/logo.svg" alt="Logo">Gerenciador de Tarefas</a>
+          <a class="navbar-brand logo-custom" href="#"><img src="../static/img/logo.svg" alt="Logo">Gerenciador de Tarefas</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -19,18 +19,20 @@
               <li class="nav-item">
                 <a class="nav-link custom-link" href="#">Tarefas</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link custom-link" href="#">Concluidas</a>
-              </li>
             </ul>
-            <button type="button" class="btn btn-light me-3">Login</button>
-            <button type="button" class="btn btn-info custom-button">Cadastrar</button>
+          </div>
+          <div class="d-flex">
+            {% if 'user' in session %}
+              TERMINAR...
+            {% endif %}
           </div>
         </div>
       </nav>
-      {% block conteudo %}
+      <div class="container">
+        {% block conteudo %}
 
-      {% endblock %}
+        {% endblock %}
+      </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
