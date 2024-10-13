@@ -19,7 +19,6 @@ class Config():
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_ECHO = True # Exibe consultas SQL no console
 
 
 class ProductionConfig(Config):
