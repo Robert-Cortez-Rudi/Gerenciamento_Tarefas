@@ -8,10 +8,10 @@ class Task(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text, nullable=False)
-    due_date = db.Column(db.Datetime, nullable=False) # Data de vencimento da tarefa
+    due_date = db.Column(db.DateTime, nullable=False) # Data de vencimento da tarefa
     completed = db.Column(db.Boolean, default=False)
     user_id = db.Column(db.Integer, db.ForeignKey("Users.id"), nullable=False)
-    created_at  = db.Column(db.Datetime, default=datetime.now(timezone.utc)) # Data de criação
+    created_at  = db.Column(db.DateTime, default=datetime.now(timezone.utc)) # Data de criação
 
     user = db.relationship("Users", backref="Tasks")
 
