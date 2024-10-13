@@ -1,3 +1,2 @@
-from models.user import User 
-from models.tasks import Task
-from gerenciador_tarefas import db
+from gerenciador_tarefas.models.user import User 
+from gerenciador_tarefas.models.tasks import Task
