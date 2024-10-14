@@ -8,11 +8,13 @@ body {
 
 #card {
     width: 500px;
-    height: 400px;
-    padding: 30px;
+    height: 500px;
+    padding: 40px;
     background-color: #292F36;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    display: flex;
+     flex-direction: column;
 }
 
 h1 {
@@ -37,7 +39,6 @@ h1 {
     background-color: #FFE66D;
     color: #292F36;
     border: none;
-    gap: 20px;
     padding: 10px;
     border-radius: 10px;
 
@@ -51,3 +52,17 @@ h1 {
     background-color: #ffe76d9d;
 }
 
+#registrar {
+    color: #F7FFF7;
+    padding: 20px;
+    display: flex;
+        justify-content: center;
+}
+
+#cadastro {
+    color: #FFE66D;
+}
+
+#cadastro:hover {
+    color: #ffe76daf;
+}
