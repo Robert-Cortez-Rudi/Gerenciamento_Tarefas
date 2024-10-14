@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash,
 from flask_login import login_required, logout_user, login_user
 from gerenciador_tarefas.models.user import User
 from gerenciador_tarefas import login_manager, db
+from gerenciador_tarefas.forms import LoginForm, RegisterForm
 
 
 usuario = Blueprint("usuario", __name__)
@@ -19,36 +20,32 @@ def load_user(user_id):
 @usuario.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        email = request.form["email"]
-        password = request.form["password"]
-        
-        user = User.query.filter_by(email=email).first()
-        if user and user.check_password(password):
-            login_user(user)
-            return redirect(url_for("usuario.principal"))
-        else:
-            return render_template("login.html", error="E-mail ou senha incorretos")
+        form = LoginForm()
+        if form.validate_on_submit():
+            user = User.query.filter_by(email=form.email.data).first()
+            if user and user.check_password(user.password, form.password.data):
+                login_user(user)
+                return redirect(url_for("usuario.principal"))
+            else:
+                return render_template("login.html", error="E-mail ou senha incorretos")
     return render_template("login.html")
 
 
 @usuario.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
     if request.method == "POST":
-        name = request.form["nome"]
-        email = request.form["email"]
-        password = request.form["password"]
-        confirm_password = request.form["confirm_password"]
+        form = RegisterForm()
+        if form.validate_on_submit():
+            if form.password.data == form.confirm_password.data:
+                user_exists = User.query.filter_by(email=form.email.data).first()
+                if user_exists is None:
+                    new_user = User(username=form.username.data, email=form.email.data, password=form.password.data)
 
-        if password == confirm_password:
-            user_exists = User.query.filter_by(email=email).first()
-            if user_exists is None:
-                new_user = User(username=name, email=email, password=password)
-
-                db.session.add(new_user)
-                db.session.commit()
-                flash("Cadastro realizado com sucesso!", "success")
-                login_user(new_user)
-                return redirect(url_for("usuario.principal"))
+                    db.session.add(new_user)
+                    db.session.commit()
+                    flash("Cadastro realizado com sucesso!", "success")
+                    login_user(new_user)
+                    return redirect(url_for("usuario.principal"))
     return render_template("cadastro.html")
 
 
