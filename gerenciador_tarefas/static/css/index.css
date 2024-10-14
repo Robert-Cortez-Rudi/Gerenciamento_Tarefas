@@ -21,5 +21,9 @@
 }
 
 #iniciar:hover {
-    background-color: #ffe76daf;
+    background-color: #ffe76dce;
+}
+
+#iniciar:active{
+    background-color: #ffe76dc0;
 }
