@@ -24,12 +24,25 @@ body {
 
 .custom-button {
     background-color: #FFE66D;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
     border: none;
+    display: flex;
+        align-items: center;
+    
+    
 }
 
 .custom-button:hover {
-    background-color: #ffe76daf;
-    border: none;
+    background-color: #ffe76dce;
+    color: #000000;
 }
 
+.custom-button:active {
+    background-color: #ffe76db0;
+    color: #000000;
+}
 
