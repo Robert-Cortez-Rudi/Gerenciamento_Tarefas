@@ -1,5 +1,5 @@
 #card {
-    background-color: #67928954;
+    background-color: #292F36;
     width: 500px;
     height: 450px;
     padding: 30px;
@@ -14,12 +14,12 @@
 
 
 #iniciar {
-    background-color: #1EA896;
+    background-color: #FFE66D;
+    color: #292F36;
     margin: 0 auto;
     border: none;
 }
 
 #iniciar:hover {
-    background-color: #1D7874;
-
+    background-color: #ffe76daf;
 }
