@@ -1,31 +1,34 @@
 body {
     font-family: -apple-system,BlinkMacSystemFont,Segoe-UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira-Sans,Droid-Sans,Helvetica-Neue,sans-serif;
-    background-color: #071E22;
-    color: #F4C095;
+    background-color: #4ECDC4;
+    color: #F7FFF7;
 }
 
+#image {
+    color: #FFE66D;
+}
 
 .custom-link {
-    color: #1EA896;
+    color: #FFE66D;
 }
 
 .custom-link:hover {
-    color: #1D7874;
+    color: #ffe76daf;
 }
 
 
 .logo-custom:hover {
-    color: #c5c7c7;
+    color: #c2c2c2;
 }
 
 
 .custom-button {
-    background-color: #1EA896;
+    background-color: #FFE66D;
     border: none;
 }
 
 .custom-button:hover {
-    background-color: #1D7874;
+    background-color: #ffe76daf;
     border: none;
 }
 
