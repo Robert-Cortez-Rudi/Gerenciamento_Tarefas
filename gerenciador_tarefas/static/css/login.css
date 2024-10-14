@@ -1,4 +1,53 @@
 body {
-    background-color: #071E22;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4ECDC4;
+}
+
+#card {
+    width: 500px;
+    height: 400px;
+    padding: 30px;
+    background-color: #292F36;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.custom-input {
+    margin-bottom: 20px;
+}
+
+.form-floating input {
+    padding: 20px 10px;
+}
+
+#button {
+    display: flex;
+        justify-content: center;
+}
+
+.login {
+    width: 120px;
+    background-color: #FFE66D;
+    color: #292F36;
+    border: none;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.login:hover {
+    background-color: #ffe76dcc;
+}
+
+.login:active {
+    background-color: #ffe76d9d;
 }
 
