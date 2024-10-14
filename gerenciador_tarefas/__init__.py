@@ -30,6 +30,9 @@ def create_app():
 
 
     from .routes import usuario
+    from .routes import tasks
+
     app.register_blueprint(usuario)
+    app.register_blueprint(tasks)
 
     return app
