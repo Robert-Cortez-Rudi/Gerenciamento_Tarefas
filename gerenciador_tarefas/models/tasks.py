@@ -13,7 +13,6 @@ class Task(UserMixin, db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("Users.id"), nullable=False)
     created_at  = db.Column(db.DateTime, default=datetime.now(timezone.utc)) # Data de criação
 
-    user = db.relationship("Users", backref="Tasks")
 
     def task_completed(self): # Tarefa finalizada
         self.completed = True
