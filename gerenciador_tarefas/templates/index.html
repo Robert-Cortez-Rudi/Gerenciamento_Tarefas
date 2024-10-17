@@ -18,8 +18,10 @@
         <li>Visualizar tarefas</li>
     </ul>
     
-    <div id="button">
-        <button class="btn btn-primary" id="iniciar">Gerencie suas tarefas</button>
+    <div class="d-flex justify-content-center button" id="button">
+        <form action="{{url_for('tasks.dashboard') if usuario else url_for('usuario.login')}}">
+            <button class="btn btn-primary" id="iniciar">Gerencie suas tarefas</button>
+        </form>
     </div>
     
     
