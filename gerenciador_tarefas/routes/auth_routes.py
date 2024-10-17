@@ -19,16 +19,19 @@ def load_user(user_id):
 
 @usuario.route("/login", methods=["GET", "POST"])
 def login():
+    form = LoginForm()
     if request.method == "POST":
-        form = LoginForm()
         if form.validate_on_submit():
             user = User.query.filter_by(email=form.email.data).first()
             if user and user.check_password(user.password, form.password.data):
                 login_user(user)
-                return redirect(url_for("usuario.principal"))
+                flash("Conta acessada com sucesso!", "success")
+                return redirect(url_for("usuario.principal", usuario=user))
             else:
-                return render_template("login.html", error="E-mail ou senha incorretos")
-    return render_template("login.html")
+                flash("Email ou senha inválidos", "danger")
+        else:
+            flash("Email ou senha inválidos", "danger")
+    return render_template("login.html", form=form)
 
 
 @usuario.route("/cadastro", methods=["GET", "POST"])
