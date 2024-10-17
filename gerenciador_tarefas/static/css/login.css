@@ -54,7 +54,6 @@ h1 {
 
 #registrar {
     color: #F7FFF7;
-    padding: 20px;
     display: flex;
         justify-content: center;
 }
@@ -65,4 +64,8 @@ h1 {
 
 #cadastro:hover {
     color: #ffe76daf;
+}
+
+.container {
+    padding: 10px;
 }
