@@ -46,3 +46,37 @@ body {
     color: #000000;
 }
 
+
+
+.perfil .btn {
+    background-color: #FFE66D; 
+    color: #000000; 
+    border: none; 
+}
+
+.perfil .btn:hover {
+    background-color: #ffe76dc7;
+}
+
+
+.perfil .dropdown-menu {
+    background-color: #FFE66D; 
+    color: #000; 
+}
+
+.perfil .dropdown-menu:hover {
+    background-color: #ffe76dc7; 
+    color: #000; 
+}
+
+.perfil .dropdown-menu .dropdown-item {
+    background-color: #FFE66D; 
+    color: #000; 
+}
+
+.perfil .dropdown-menu .dropdown-item:hover {
+    background-color: #ffe76dc7; 
+    color: #000; 
+}
+
+
