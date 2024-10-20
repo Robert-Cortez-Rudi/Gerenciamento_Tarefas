@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-<link rel="stylesheet" href="../static/css/index.css">
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 
 <div id="card">
     <h1 style="text-align: center; padding: 10px;">Gerenciador de Tarefas</h1>
@@ -19,15 +19,12 @@
     </ul>
     
     <div class="d-flex justify-content-center button" id="button">
-        <form action="{{url_for('tasks.dashboard') if usuario else url_for('usuario.login')}}">
+        <form action="{{url_for('tasks.dashboard') if session.get('user') else url_for('usuario.login')}}">
             <button class="btn btn-primary" id="iniciar">Gerencie suas tarefas</button>
         </form>
     </div>
     
     
 </div>
-
-
-
 
 {% endblock %}
