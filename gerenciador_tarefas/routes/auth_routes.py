@@ -23,10 +23,10 @@ def login():
     if request.method == "POST":
         if form.validate_on_submit():
             user = User.query.filter_by(email=form.email.data).first()
-            if user and user.check_password(user.password, form.password.data):
+            if user and user.check_password(form.password.data):
                 login_user(user)
-                flash("Conta acessada com sucesso!", "success")
-                return redirect(url_for("usuario.principal", usuario=user))
+                session["user"] = user.username
+                return redirect(url_for("tasks.dashboard"))
             else:
                 flash("Email ou senha inválidos", "danger")
         else:
@@ -36,20 +36,28 @@ def login():
 
 @usuario.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
+    form = RegisterForm()
     if request.method == "POST":
-        form = RegisterForm()
         if form.validate_on_submit():
             if form.password.data == form.confirm_password.data:
                 user_exists = User.query.filter_by(email=form.email.data).first()
                 if user_exists is None:
-                    new_user = User(username=form.username.data, email=form.email.data, password=form.password.data)
+                    user = User(username=form.username.data, email=form.email.data, password=form.password.data)
 
-                    db.session.add(new_user)
+                    db.session.add(user)
                     db.session.commit()
-                    flash("Cadastro realizado com sucesso!", "success")
-                    login_user(new_user)
-                    return redirect(url_for("usuario.principal"))
-    return render_template("cadastro.html")
+                    login_user(user)
+                    session["user"] = user.username
+                    return redirect(url_for("tasks.dashboard"))
+                else:
+                    flash("⚠️ Este email já está em uso. Tente outro!", "danger")
+            else:
+                flash("❌ As senhas não conferem! Verifique e tente novamente.", "danger")
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    flash(f"Erro no campo {field}: {error}", "danger")
+    return render_template("cadastro.html", form=form)
 
 
 @usuario.route("/logout")
@@ -57,5 +65,4 @@ def cadastro():
 def logout():
     logout_user()
     session.pop("user", None)
-    flash("Você saiu da sua conta!", "success")
     return redirect(url_for("usuario.principal"))
