@@ -10,25 +10,28 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand logo-custom" href="#"><img src="{{url_for('static', filename='img/logo.svg')}}" alt="Logo">Gerenciador de Tarefas</a>
+          <a class="navbar-brand logo-custom" href="{{url_for('usuario.principal')}}"><img src="{{url_for('static', filename='img/logo.svg')}}" alt="Logo">Gerenciador de Tarefas</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link custom-link" href="#">Tarefas</a>
+                <a class="nav-link custom-link" href="{{url_for('tasks.dashboard')}}">Tarefas</a>
               </li>
             </ul>
           </div>
           <div class="d-flex">
             {% if 'user' in session %}
-              <div class="dropdown">
+            <div class="dropdown perfil">
+              <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="{{url_for('static', filename='img/perfil.svg')}}" alt="Perfil">
-                <button type="button" class="btn btn-info custom-button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{ session['user'] }}
-                </button>
-              </div>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="{{url_for('usuario.logout')}}">Sair da conta</a></li>
+              </ul>
+            </div>
             {% else %}
               <a href="{{url_for('usuario.login')}}" class="btn btn-light me-3" style="display: flex; align-items: center;">Login</a>
               <a href="{{url_for('usuario.cadastro')}}" class="custom-button">Cadastrar</a>
