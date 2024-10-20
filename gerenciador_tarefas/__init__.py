@@ -20,7 +20,7 @@ def create_app():
     login_manager.init_app(app)
     print("Login manager inicializado")
 
-    login_manager.login_view = "auth.login"
+    login_manager.login_view = "usuario.login"
 
     with app.app_context():
         from .models import User, Task
