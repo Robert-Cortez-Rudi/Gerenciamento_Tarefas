@@ -1,0 +1,58 @@
+body {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe-UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira-Sans,Droid-Sans,Helvetica-Neue,sans-serif;
+    background-color: #4ECDC4;
+}
+
+#card {
+    width: 500px;
+    height: 600px;
+    background-color: #292F36;
+    margin: 50px auto;
+    border-radius: 10px;
+    gap: 20px;
+    padding: 40px;
+    display: flex;
+        flex-direction: column;
+
+}
+
+h1 {
+    text-align: center;
+    color: #F7FFF7;
+    margin-bottom: 10px;
+}
+
+.custom-input {
+    margin-bottom: 20px;
+}
+
+.form-floating input {
+    padding: 20px 10px;
+}
+
+#button {
+    display: flex;
+        justify-content: center;
+}
+
+.cadastro {
+    width: 120px;
+    background-color: #FFE66D;
+    color: #292F36;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cadastro:hover {
+    background-color: #ffe76dcc;
+}
+
+.cadastro:active {
+    background-color: #ffe76d9d;
+}
+
+
+.container {
+    padding: 10px;
+}
