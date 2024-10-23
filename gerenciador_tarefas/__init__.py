@@ -1,11 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-<<<<<<< HEAD
 from config import Config, DevelopmentConfig, ProductionConfig
-=======
-from config import Config
->>>>>>> caa7929 (Gerenciador_tarefas)
 
 
 db = SQLAlchemy()
@@ -15,11 +11,7 @@ login_manager = LoginManager()
 def create_app():
     app = Flask(__name__)
     print("App criado")
-<<<<<<< HEAD
     app.config.from_object(DevelopmentConfig) # Pode ser alterado para modo de desenvolvimento ou de produção
-=======
-    app.config.from_object(Config) 
->>>>>>> caa7929 (Gerenciador_tarefas)
 
     db.init_app(app)
     print("DB inicializado")
