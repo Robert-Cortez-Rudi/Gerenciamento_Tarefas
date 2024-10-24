@@ -1,0 +1,17 @@
+.card {
+    background-color: #292F36;
+    width: 500px;
+    height: 450px;
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+
+.custom {
+    background-color: #FFE66D;
+    border: none;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #FFD700;
+}
