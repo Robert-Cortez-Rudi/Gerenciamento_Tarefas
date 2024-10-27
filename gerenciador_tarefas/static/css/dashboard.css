@@ -1,26 +1,83 @@
+.title {
+    text-align: center;
+}
+
 .card {
     background-color: #292F36;
-    width: 500px;
-    height: 450px;
+    width: 650px;
+    min-height: 450px;
+    overflow: auto;
     padding: 30px;
     margin: 50px auto;
     border-radius: 10px;
 }
 
-.custom {
+#custom {
     background-color: #FFE66D;
     color: #292F36;
     border: none;
 }
 
-.custom:hover {
+#custom:hover {
     background-color: #ffe76dc5;
+    color: #292F36;
 }
 
-.custom:active {
-    background-color: #ffe76dc5;
+#custom:active {
+    background-color: #ffe76dab;
+    color: #292F36;
 }
 
 .table-hover tbody tr:hover {
     background-color: #FFD700;
+}
+
+.info {
+    text-align: center;
+}
+
+td.overdue {
+    color: #FF6B6B;
+    text-align: center;
+}
+
+.btn-success-cor {
+   background-color: #4ECDC4; 
+   color: #292F36;
+}
+
+.btn-success-cor:hover {
+    background-color: #4ecdc5de;
+    color: #292F36;
+}
+
+.btn-danger-cor{
+    background-color: #FF6B6B;
+    color: #292F36;
+}
+
+.btn-danger-cor:hover {
+    background-color: #ff6b6bde;
+    color: #292F36;
+}
+
+
+.btn-primary-edit {
+    background-color: #4ECDC4;
+    color: #292F36;
+}
+
+.btn-primary-edit:hover {
+    background-color: #4ecdc5de;
+    color: #292F36;
+}
+
+.btn-danger-edit {
+    background-color: #FF6B6B;
+    color: #292F36;
+}
+
+.btn-danger-edit:hover {
+    background-color: #ff6b6bde;
+    color: #292F36;
 }
