@@ -9,7 +9,16 @@
 
 .custom {
     background-color: #FFE66D;
+    color: #292F36;
     border: none;
+}
+
+.custom:hover {
+    background-color: #ffe76dc5;
+}
+
+.custom:active {
+    background-color: #ffe76dc5;
 }
 
 .table-hover tbody tr:hover {
