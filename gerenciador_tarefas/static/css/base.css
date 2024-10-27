@@ -65,7 +65,7 @@ body {
 }
 
 .perfil .dropdown-menu:hover {
-    background-color: #ffe76dc7; 
+    background-color: #ffe76dec; 
     color: #000; 
 }
 
@@ -75,8 +75,20 @@ body {
 }
 
 .perfil .dropdown-menu .dropdown-item:hover {
-    background-color: #ffe76dc7; 
+    background-color: #cab652; 
     color: #000; 
 }
 
 
+
+.alert-container {
+    z-index: 1050; 
+    max-width: 300px;
+    right: 20px;
+    top: 10px;
+    position: fixed; 
+}
+
+.btn-close {
+    float: right;
+}
