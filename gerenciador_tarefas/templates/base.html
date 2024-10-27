@@ -29,8 +29,11 @@
                   {{ session['user'] }}
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-                  <li><a class="dropdown-item" href="{{url_for('usuario.logout')}}">Sair da conta</a></li>
-              </ul>
+                  <li><a class="dropdown-item" href="{{url_for('usuario.logout')}}">Sair</a></li>
+                  {% if current_user.is_authenticated %}
+                    <li><a class="dropdown-item" href="{{url_for('usuario.delete_user', id=current_user.id)}}" onclick="return confirm('Tem certeza que deseja excluir sua conta?')">Excluir conta</a></li>
+                  {% endif %}              
+              </ul>            
             </div>
             {% else %}
               <a href="{{url_for('usuario.login')}}" class="btn btn-light me-3" style="display: flex; align-items: center;">Login</a>
@@ -39,6 +42,22 @@
           </div>
         </div>
       </nav>
+
+      <div class="flash-container">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <div class="alert-container position-fixed" style="top: 80px; right: 20px; z-index: 1050;">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+      
       <div class="container">
         {% block conteudo %}
 
