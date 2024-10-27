@@ -85,12 +85,15 @@ def edit_task(id):
 @tasks.route("/dashboard/completed/<int:id>", methods=["GET", "POST"])
 def task_completed(id):
     task = Task.query.get_or_404(id)
-    if task != current_user.id:
+
+    if task.user_id != current_user.id:
         flash("Você não tem permissão para finalizar essa tarefa!", "danger")
     
-    task.completed = True
+    task.completed = not task.completed
 
     db.session.commit()
-    flash("Tarefa finalizada com sucesso!", "success")
+    
+    status_message = "finalizada" if task.completed else "marcada como incompleta"
+    flash(f"Tarefa {status_message} com sucesso!", "success" if task.completed else "danger")
     return redirect(url_for("tasks.dashboard"))
 
