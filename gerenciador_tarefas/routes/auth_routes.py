@@ -66,3 +66,14 @@ def logout():
     logout_user()
     session.pop("user", None)
     return redirect(url_for("usuario.principal"))
+
+
+@usuario.route("/<int:id>/delete")
+@login_required
+def delete_user(id):
+    user = User.query.get_or_404(id)
+    db.session.delete(user)
+    db.session.commit()
+    session.clear()
+    flash("Conta excluida com sucesso!", "success")
+    return redirect(url_for("usuario.principal"))
