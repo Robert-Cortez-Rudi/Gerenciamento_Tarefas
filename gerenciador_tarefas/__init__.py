@@ -11,7 +11,7 @@ login_manager = LoginManager()
 def create_app():
     app = Flask(__name__)
     print("App criado")
-    app.config.from_object(DevelopmentConfig) # Pode ser alterado para modo de desenvolvimento ou de produção
+    app.config.from_object(ProductionConfig) # Pode ser alterado para modo de desenvolvimento ou de produção
 
     db.init_app(app)
     print("DB inicializado")
