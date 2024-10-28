@@ -31,8 +31,10 @@ Este projeto é uma ótima introdução ao desenvolvimento de aplicações web e
 
 ## 🛠️ Tecnologias Utilizadas
 - **Python 3.x**
-- **Flask 3.x**
-- **SQLAlchemy 2.x** 
+- **Flask 3.x** para criação de aplicativos web
+- **Flask-login 0.6.x** para autenticação de usuários
+- **Flask-SQLAlchemy 3.x** para gerenciamento de dados
+- **Flask-WTF 0.15.x** para formulários
 - **PostgreSQL** para banco de dados.
 - **Bootstrap 5.3** para estilização.
 - **HTML/CSS** para templates e customizações.
@@ -90,3 +92,6 @@ Este projeto é uma ótima introdução ao desenvolvimento de aplicações web e
 
 
    
+## 🐛 Reportando Bugs e Melhorias
+
+Encontrou um bug ou tem sugestões? Abra uma issue ou faça uma pull-request para ajudar com o crescimento do projeto!
